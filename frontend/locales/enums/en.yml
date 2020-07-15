@@ -123,7 +123,7 @@ en:
       DVD-Rs: DVD-Rs
       DVD_RWs: DVD-RWs
       paintings: Paintings
-      duration_HH:MM:SS.mmm: Duration (HH:MM:SS.mmm)
+      duration_HH_MM_SS_mmm: 'Duration (HH:MM:SS.mmm)'
     collection_management_processing_status:
       none: "Not specified"
       new: New
