@@ -13,34 +13,6 @@ en:
       <p>There is a Yale listserv for ArchivesSpace users. <a href='http://mailman.yale.edu/mailman/listinfo/yulaspace'>Please join</a>!</p>
       <p>For an overview of Archives at Yale, see our new <a href="https://guides.library.yale.edu/archivesatyalestafftraining">LibGuide</a>.
 
-  accession:
-    user_defined: &user_defined_attributes
-      boolean_1: "Authorization Received (accessions only)"
-      boolean_2: "Record Reviewed (accessions only)"
-      boolean_3: "Boolean 3 (not used)"
-      integer_1: "Integer 1 (not used)"
-      integer_2: "Integer 2 (not used)"
-      integer_3: "Integer 3 (not used)"
-      real_1: OCLC Number
-      real_2: "Real 2 (not used)"
-      real_3: "Real 3 (not used)"
-      string_1: "BRBL ACQ Number (ACC) (accessions only)"
-      string_2: Voyager Bib ID
-      string_3: "Place of Publication (accessions only)"
-      string_4: "ISBN or ISSN (accessions only)"
-      text_1: "Call Number (accessions only)"
-      text_2: "Title Main Entry (accessions only)"
-      text_3: "Monographic Series (accessions only)"
-      text_4: "Plating Information (accessions only)"
-      text_5: "Bibliographic Citation (accessions only)"
-      date_1: "Restriction Review Date (accessions only)"
-      date_2: "Accession Completed Date (accessions only)"
-      date_3: "Date 3 (not used)"
-      enum_1: "Order Type (accessions only)"
-      enum_2: "Acquisition Capacity Budget (accessions only)"
-      enum_3: "Acquired By (accessions only)"
-      enum_4: "Controlled Value 4 (not used)"
-
   user_defined: &user_defined_attributes
     boolean_1: "Authorization Received (accessions only)"
     boolean_2: "Record Reviewed (accessions only)"
@@ -73,7 +45,14 @@ en:
     _singular: User Defined
     _plural: User Defined
 
+  accession:
+    user_defined: *user_defined_attributes
+
+  digital_object:
+    user_defined: *user_defined_attributes
+
   resource:
+    user_defined: *user_defined_attributes
     title_tooltip: |
         <p>REQUIRED FIELD. The title assigned to the resource.</p>
         <p>See DACS 2.3</p>
@@ -86,7 +65,6 @@ en:
           <li>National Academy of Sciences correspondence</li>
           <li>Audio and video recordings</li>
         </ul>
-
     ead_id_tooltip: |
         <p>The identifier for the EAD generated from the resource description, typically a file name. Needs to be unique within the repository context.</p>
         <p>Examples:</p>
@@ -95,7 +73,6 @@ en:
           <li>beinecke.stockton</li>
           <li>mssa.ms.1002</li>
         </ul>
-
     ead_location_tooltip: |
         <p>This field should be left blank.</p>
         <p>It will be filled in by the ArchivesSpace EAD Export Service, once the Handle link is created. Whatever value you add to the EAD ID field will be used in the Handle link, which will be created the first time the finding aid is published, as long as this field is left blank.</p>
