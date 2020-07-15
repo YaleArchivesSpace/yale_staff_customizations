@@ -1,0 +1,234 @@
+en:
+  enumerations:
+    name_source:
+      local_arts: "Local (Arts)"
+      local_beinecke: "Local (BRBL)"
+      local_divinity: "Local (Divinity)"
+      local_fortunoff: "Local (Fortunoff)"
+      local_medical: "Local (Medical)"
+      local_mssa: "Local (MSSA)"
+      local_music: "Local (Music)"
+      local_peabody: "Local (Peabody)"
+      local_walpole: "Local (Walpole)"
+      local_ycba_ia: "Local (YCBA-IA)"
+      local_ycba_rbm: "Local (YCBA-RBM)"
+    extent_extent_type:
+      see_container_summary: See Container Summary
+      audio cartridges: Audio Cartridges
+      audio belts: Audio Belts
+      audio rolls: Audio Rolls
+      audio_cylinders: Audio Cylinders
+      audio discs: Audio Discs
+      audio_discs_(CD): Audio Discs (CD)
+      audio_wire_reels: Audio Wire Reels
+      audiocassettes: Audiocassettes
+      audiotape_reels: Audiotape Reels
+      audiotapes: Audiotapes
+      computer: Computers
+      computer file (ai): "Computer Files (.ai)"
+      computer file (fla): "Computer Files (.fla)"
+      computer file (mov): "Computer Files (.mov)"
+      computer files (doc): "Computer Files (.doc)"
+      computer files (dvd-video): "Computer Files (dvd-video)"
+      computer files (dwg): "Computer Files (.dwg)"
+      computer files (eml): "Computer Files (.eml)"
+      computer files (jpg): "Computer Files (.jpg)"
+      computer files (mbx): "Computer Files (.mbx)"
+      computer files (mp3): "Computer Files (.mp3)"
+      computer files (mp4): "Computer Files (.mp4)"
+      computer files (pcd): "Computer Files (.pcd)"
+      computer files (pdf): "Computer Files (.pdf)"
+      computer files (ppt): "Computer Files (.ppt)"
+      computer files (psd): "Computer Files (.psd)"
+      computer files (rtf): "Computer Files (.rtf)"
+      computer files (tiff): "Computer Files (.tif)"
+      computer files (wav): "Computer Files (.wav)"
+      computer files (zip): "Computer Files (.zip)"
+      disks: Disks
+      external_hard_drives: External Hard Drives
+      film_cartridges: Film Cartridges
+      super 8 film: Film Cartridges (Super 8)
+      film_cassettes: Film Cassettes
+      film_loops: Film Loops
+      film_reels: Film Reels
+      film reel (35mm): "Film Reels (35mm)"
+      film reels (16 mm): "Film Reels (16mm)"
+      film reels (8mm): "Film Reels (8mm)"
+      film rolls: Film Rolls
+      filmslips: Filmslips
+      filmstrips: Filmstrips
+      filmstrip cartridges: Filmstrip Cartridges
+      flash_drives: Flash Drives
+      floppy disks: Floppy Disks
+      folders: Folders
+      folios: Folios
+      internal_hard_drives: Internal Hard Drives
+      items: Items
+      laptop_computers: Laptop Computers
+      desktop_computers: Desktop Computers
+      microcassettes: Microcassettes
+      optical disc (xdcam): "Optical Discs (XDCAM)"
+      optical disks (dvd): "Optical Discs (DVD)"
+      orb disk: Orb Disc
+      phonograph_records: Phonograph Records
+      photographs: Photographs
+      sound_track_film_reels: Sound Track Film Reels
+      sound_cartridges: Sound Cartridges
+      videocartridges: Videocartridges
+      videocassettes: Videocassettes
+      videocassettes (d-1): "Videocassettes (D-1)"
+      videocassettes (d-2): "Videocassettes (D-2)"
+      videocassettes (dvcpro): "Videocassettes(DVCPRO)"
+      videocassettes (s-vhs): "Videocassettes (S-VHS)"
+      videocassettes (vcr vc-30): "Videocassettes (VCR VC-30)"
+      videocassettes (vhs-c): "Videocassettes VHS-C"
+      videocassettes_(vhs): "Videocassettes (VHS)"
+      videocassettes_(u-matic): "Videocassettes (U-matic)"
+      videocassettes_(betacam): "Videocassettes (Betacam)"
+      videocassettes_(betacamsp): "Videocassettes (BetacamSP)"
+      videocassettes_(betacamsp_l): "Videocassettes (BetacamSP L)"
+      videocassettes_(betamax): "Videocassettes (Betamax)"
+      videocassettes_(video_8): "Videocassettes (Video 8)"
+      videocassettes_(hi8): "Videocassettes (Hi8)"
+      videocassettes_(digital_betacam): "Videocassettes (Digital Betacam)"
+      videocassettes_(minidv): "Videocassettes (MiniDV)"
+      videocassettes_(hdcam): "Videocassettes (HDCAM)"
+      videocassettes_(dvcam): "Videocassettes (DVCAM)"
+      videotape (.5"): 'Videotapes (.5")'
+      videotape (2"): 'Videotapes (2")'
+      videotape (v-30h): "Videotapes (V-30H)"
+      videotapes (8 mm): "Videotapes (8mm)"
+      videodiscs: Videodiscs
+      videoreels: Videoreels
+      computer_storage_media: Computer Storage Media
+      computer_files: Computer Files
+      ephemera_items_(accessions): "Ephemera Items (accessions)"
+      manuscript_items_(accessions): "Manuscript Items (accessions)"
+      monograph_titles_(accessions): "Monograph Titles (accessions)"
+      monograph_volumes_(accessions): "Monograph Volumes (accessions)"
+      non-book_formats_(accessions): "Non-book Formats (accessions)"
+      serial_titles_(accessions): "Serial Titles (accessions)"
+      serial_volumes_(accessions): "Serial Volumes (accessions)"
+      3.5_floppy_disks: "3.5 Floppy Disks"
+      5.25_floppy_disks: "5.25 Floppy Disks"
+      JAZ_disks: JAZ Disks
+      ZIP_disks: ZIP Disks
+      External_Hard_Drives: External Hard Drives
+      Internal_Hard_Drives: internal Hard Drives
+      Flash_Drives: Flash Drives
+      Laptop_Computers: Laptop Computers
+      Desktop_Computers: Desktop Computers
+      CD_Rs: CD-Rs
+      CD_RWs: CD-RWs
+      DVD-Rs: DVD-Rs
+      DVD_RWs: DVD-RWs
+      paintings: Paintings
+      duration_HH:MM:SS.mmm: Duration (HH:MM:SS.mmm)
+    collection_management_processing_status:
+      none: "Not specified"
+      new: New
+      in_progress: "In Progress"
+      completed: Completed
+      processed_further_work_merited: "Processed: Further Work Merited"
+      processed_further_work_possible: "Processed: Further Work Possible"
+      processed_further_work_unlikely: "Processed: Further Work Unlikely"
+      pending_cataloging: "Pending Cataloging"
+      pending_processing: "Pending Processing"
+      ready_for_review: "Ready for Review"
+      unprocessed: Unprocessed
+      deposited: Deposited
+    date_calendar:
+      julian: Julian
+    event_event_type:
+      accession: Accession
+      accumulation: Accumulation
+      acknowledgement: Acknowledgement
+      acknowledgement_sent: Acknowledgement Sent
+      agreement_received: Agreement Received
+      agreement_sent: Agreement Sent
+      agreement_signed: Agreement Signed
+      appraisal: Appraisal
+      assessment: Assessment
+      capture: Capture
+      cataloged: Cataloged
+      collection: Collection
+      compression: Compression
+      contribution: Contribution
+      component_transfer: Component Transfer
+      copyright_transfer: Copyright Transfer
+      credit_memo_received: Credit Memo Received
+      custody_transfer: Custody Transfer
+      date_to_beinecke: Date to Beinecke
+      date_to_cataloging: Date to Cataloging
+      deaccession: Deaccession
+      decompression: Decompression
+      decryption: Decryption
+      deletion: Deletion
+      digital_signature_validation: Digital Signature Validation
+      externally_appraised: Externally Appraised
+      fixity_check: Fixity Check
+      frozen: Frozen
+      image_capture: Image Capture
+      ingestion: Ingestion
+      message_digest_calculation: Message Digest Calculation
+      migration: Migration
+      normalization: Normalization
+      pii_scan: Personally Identifiable Information Scan
+      processed: Processed
+      processing_new: Processing New
+      processing_completed: Processing Completed
+      processing_completed_baseline: Baseline Processing Completed
+      processing_in_progress: Processing In Progress
+      processing_started: Processing Started
+      processing_unprocessed: Unprocessed
+      request: Request
+      stream_capture: Stream Capture
+      publication: Publication
+      replication: Replication
+      restrictions_reviewed: Restrictions Reviewed
+      rights_transferred: Rights Transferred
+      tax_form_completed: Tax Form Completed
+      transfer_capture: Transfer Capture
+      validation: Validation
+      verified: Verified
+      virus_check: Virus Check
+    subject_source:
+      local_arts: "Local (Arts)"
+      local_beinecke: "Local (BRBL)"
+      local_divinity: "Local (Divinity)"
+      local_fortunoff: "Local (Fortunoff)"
+      local_medical: "Local (Medical)"
+      local_mssa: "Local (MSSA)"
+      local_music: "Local (Music)"
+      local_peabody: "Local (Peabody)"
+      local_walpole: "Local (Walpole)"
+      local_ycba_ia: "Local (YCBA-IA)"
+      local_ycba_rbm: "Local (YCBA-RBM)"
+    container_type:
+      item: Item
+      item_barcode: Item Barcode
+    accession_sibling_relator_type:
+      in_lot: "\"In Lot\" Relationship"
+    user_defined_enum_1:
+      standing_order: Standing Order
+      subscription: Subscription
+    user_defined_enum_2:
+      pending_cataloging: Pending Cataloging
+      pending_processing: Pending Processing
+    user_defined_enum_3:
+      barton: "Barton, Melissa"
+      clemens: "Clemens, Raymond"
+      james: "James, Kathryn"
+      kuhl: "Kuhl, Nancy"
+      miles: "Miles, George"
+      repp: "Repp, Kevin"
+      young: "Young, Timothy"
+    user_defined_enum_4:
+      novalue: No value defined
+    restriction_type:
+      UseSurrogate: 6 - Use Surrogate
+      NoRequest: 7 - No Request
+  enumeration_names:
+    user_defined_enum_1: "Order Type (accession)"
+    user_defined_enum_2: "Acquisition Capacity Budget (accession)"
+    user_defined_enum_3: "Acquired By (accession)"

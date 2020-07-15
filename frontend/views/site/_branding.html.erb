@@ -1,0 +1,9 @@
+<% if AppConfig[:environment] == 'PROD' %>
+    <% logo_path, title = "images/yale-blue.png", "Production ArchivesSpace" %>
+  <% else %>
+    <% logo_path, title = "images/yale-dan.jpg", "I'm the curator, Hollis Hurlbut." %>
+<% end %>
+
+<div class="container-fluid navbar-branding">
+  <%= image_tag logo_path, :class=>"img-responsive", :title => title %>
+</div>
