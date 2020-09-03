@@ -1,17 +1,17 @@
 en:
   enumerations:
     name_source:
-      local_arts: "Local (Arts)"
-      local_beinecke: "Local (BRBL)"
-      local_divinity: "Local (Divinity)"
-      local_fortunoff: "Local (Fortunoff)"
-      local_medical: "Local (Medical)"
-      local_mssa: "Local (MSSA)"
-      local_music: "Local (Music)"
-      local_peabody: "Local (Peabody)"
-      local_walpole: "Local (Walpole)"
-      local_ycba_ia: "Local (YCBA-IA)"
-      local_ycba_rbm: "Local (YCBA-RBM)"
+      local_arts: Local (Arts)
+      local_beinecke: Local (BRBL)
+      local_divinity: Local (Divinity)
+      local_fortunoff: Local (Fortunoff)
+      local_medical: Local (Medical)
+      local_mssa: Local (MSSA)
+      local_music: Local (Music)
+      local_peabody: Local (Peabody)
+      local_walpole: Local (Walpole)
+      local_ycba_ia: Local (YCBA-IA)
+      local_ycba_rbm: Local (YCBA-RBM)
     extent_extent_type:
       see_container_summary: See Container Summary
       audio cartridges: Audio Cartridges
@@ -25,25 +25,25 @@ en:
       audiotape_reels: Audiotape Reels
       audiotapes: Audiotapes
       computer: Computers
-      computer file (ai): "Computer Files (.ai)"
-      computer file (fla): "Computer Files (.fla)"
-      computer file (mov): "Computer Files (.mov)"
-      computer files (doc): "Computer Files (.doc)"
-      computer files (dvd-video): "Computer Files (dvd-video)"
-      computer files (dwg): "Computer Files (.dwg)"
-      computer files (eml): "Computer Files (.eml)"
-      computer files (jpg): "Computer Files (.jpg)"
-      computer files (mbx): "Computer Files (.mbx)"
-      computer files (mp3): "Computer Files (.mp3)"
-      computer files (mp4): "Computer Files (.mp4)"
-      computer files (pcd): "Computer Files (.pcd)"
-      computer files (pdf): "Computer Files (.pdf)"
-      computer files (ppt): "Computer Files (.ppt)"
-      computer files (psd): "Computer Files (.psd)"
-      computer files (rtf): "Computer Files (.rtf)"
-      computer files (tiff): "Computer Files (.tif)"
-      computer files (wav): "Computer Files (.wav)"
-      computer files (zip): "Computer Files (.zip)"
+      computer file (ai): Computer Files (.ai)
+      computer file (fla): Computer Files (.fla)
+      computer file (mov): Computer Files (.mov)
+      computer files (doc): Computer Files (.doc)
+      computer files (dvd-video): Computer Files (dvd-video)
+      computer files (dwg): Computer Files (.dwg)
+      computer files (eml): Computer Files (.eml)
+      computer files (jpg): Computer Files (.jpg)
+      computer files (mbx): Computer Files (.mbx)
+      computer files (mp3): Computer Files (.mp3)
+      computer files (mp4): Computer Files (.mp4)
+      computer files (pcd): Computer Files (.pcd)
+      computer files (pdf): Computer Files (.pdf)
+      computer files (ppt): Computer Files (.ppt)
+      computer files (psd): Computer Files (.psd)
+      computer files (rtf): Computer Files (.rtf)
+      computer files (tiff): Computer Files (.tif)
+      computer files (wav): Computer Files (.wav)
+      computer files (zip): Computer Files (.zip)
       disks: Disks
       external_hard_drives: External Hard Drives
       film_cartridges: Film Cartridges
@@ -51,9 +51,9 @@ en:
       film_cassettes: Film Cassettes
       film_loops: Film Loops
       film_reels: Film Reels
-      film reel (35mm): "Film Reels (35mm)"
-      film reels (16 mm): "Film Reels (16mm)"
-      film reels (8mm): "Film Reels (8mm)"
+      film reel (35mm): Film Reels (35mm)
+      film reels (16 mm): Film Reels (16mm)
+      film reels (8mm): Film Reels (8mm)
       film rolls: Film Rolls
       filmslips: Filmslips
       filmstrips: Filmstrips
@@ -67,8 +67,8 @@ en:
       laptop_computers: Laptop Computers
       desktop_computers: Desktop Computers
       microcassettes: Microcassettes
-      optical disc (xdcam): "Optical Discs (XDCAM)"
-      optical disks (dvd): "Optical Discs (DVD)"
+      optical disc (xdcam): Optical Discs (XDCAM)
+      optical disks (dvd): Optical Discs (DVD)
       orb disk: Orb Disc
       phonograph_records: Phonograph Records
       photographs: Photographs
@@ -76,41 +76,41 @@ en:
       sound_cartridges: Sound Cartridges
       videocartridges: Videocartridges
       videocassettes: Videocassettes
-      videocassettes (d-1): "Videocassettes (D-1)"
-      videocassettes (d-2): "Videocassettes (D-2)"
-      videocassettes (dvcpro): "Videocassettes(DVCPRO)"
-      videocassettes (s-vhs): "Videocassettes (S-VHS)"
-      videocassettes (vcr vc-30): "Videocassettes (VCR VC-30)"
-      videocassettes (vhs-c): "Videocassettes VHS-C"
-      videocassettes_(vhs): "Videocassettes (VHS)"
-      videocassettes_(u-matic): "Videocassettes (U-matic)"
-      videocassettes_(betacam): "Videocassettes (Betacam)"
-      videocassettes_(betacamsp): "Videocassettes (BetacamSP)"
-      videocassettes_(betacamsp_l): "Videocassettes (BetacamSP L)"
-      videocassettes_(betamax): "Videocassettes (Betamax)"
-      videocassettes_(video_8): "Videocassettes (Video 8)"
-      videocassettes_(hi8): "Videocassettes (Hi8)"
-      videocassettes_(digital_betacam): "Videocassettes (Digital Betacam)"
-      videocassettes_(minidv): "Videocassettes (MiniDV)"
-      videocassettes_(hdcam): "Videocassettes (HDCAM)"
-      videocassettes_(dvcam): "Videocassettes (DVCAM)"
-      videotape (.5"): 'Videotapes (.5")'
-      videotape (2"): 'Videotapes (2")'
-      videotape (v-30h): "Videotapes (V-30H)"
-      videotapes (8 mm): "Videotapes (8mm)"
+      videocassettes (d-1): Videocassettes (D-1)
+      videocassettes (d-2): Videocassettes (D-2)
+      videocassettes (dvcpro): Videocassettes(DVCPRO)
+      videocassettes (s-vhs): Videocassettes (S-VHS)
+      videocassettes (vcr vc-30): Videocassettes (VCR VC-30)
+      videocassettes (vhs-c): Videocassettes VHS-C
+      videocassettes_(vhs): Videocassettes (VHS)
+      videocassettes_(u-matic): Videocassettes (U-matic)
+      videocassettes_(betacam): Videocassettes (Betacam)
+      videocassettes_(betacamsp): Videocassettes (BetacamSP)
+      videocassettes_(betacamsp_l): Videocassettes (BetacamSP L)
+      videocassettes_(betamax): Videocassettes (Betamax)
+      videocassettes_(video_8): Videocassettes (Video 8)
+      videocassettes_(hi8): Videocassettes (Hi8)
+      videocassettes_(digital_betacam): Videocassettes (Digital Betacam)
+      videocassettes_(minidv): Videocassettes (MiniDV)
+      videocassettes_(hdcam): Videocassettes (HDCAM)
+      videocassettes_(dvcam): Videocassettes (DVCAM)
+      videotape (.5): Videotapes (.5")
+      videotape (2): Videotapes (2")
+      videotape (v-30h): Videotapes (V-30H)
+      videotapes (8 mm): Videotapes (8mm)
       videodiscs: Videodiscs
       videoreels: Videoreels
       computer_storage_media: Computer Storage Media
       computer_files: Computer Files
-      ephemera_items_(accessions): "Ephemera Items (accessions)"
-      manuscript_items_(accessions): "Manuscript Items (accessions)"
-      monograph_titles_(accessions): "Monograph Titles (accessions)"
-      monograph_volumes_(accessions): "Monograph Volumes (accessions)"
-      non-book_formats_(accessions): "Non-book Formats (accessions)"
-      serial_titles_(accessions): "Serial Titles (accessions)"
-      serial_volumes_(accessions): "Serial Volumes (accessions)"
-      3.5_floppy_disks: "3.5 Floppy Disks"
-      5.25_floppy_disks: "5.25 Floppy Disks"
+      ephemera_items_(accessions): Ephemera Items (accessions)
+      manuscript_items_(accessions): Manuscript Items (accessions)
+      monograph_titles_(accessions): Monograph Titles (accessions)
+      monograph_volumes_(accessions): Monograph Volumes (accessions)
+      non-book_formats_(accessions): Non-book Formats (accessions)
+      serial_titles_(accessions): Serial Titles (accessions)
+      serial_volumes_(accessions): Serial Volumes (accessions)
+      3.5_floppy_disks: 3.5 Floppy Disks
+      5.25_floppy_disks: 5.25 Floppy Disks
       JAZ_disks: JAZ Disks
       ZIP_disks: ZIP Disks
       External_Hard_Drives: External Hard Drives
@@ -125,16 +125,16 @@ en:
       paintings: Paintings
       duration_HH_MM_SS_mmm: 'Duration (HH:MM:SS.mmm)'
     collection_management_processing_status:
-      none: "Not specified"
+      none: Not specified
       new: New
-      in_progress: "In Progress"
+      in_progress: In Progress
       completed: Completed
-      processed_further_work_merited: "Processed: Further Work Merited"
-      processed_further_work_possible: "Processed: Further Work Possible"
-      processed_further_work_unlikely: "Processed: Further Work Unlikely"
-      pending_cataloging: "Pending Cataloging"
-      pending_processing: "Pending Processing"
-      ready_for_review: "Ready for Review"
+      processed_further_work_merited: 'Processed: Further Work Merited'
+      processed_further_work_possible: 'Processed: Further Work Possible'
+      processed_further_work_unlikely: 'Processed: Further Work Unlikely'
+      pending_cataloging: Pending Cataloging
+      pending_processing: Pending Processing
+      ready_for_review: Ready for Review
       unprocessed: Unprocessed
       deposited: Deposited
     date_calendar:
@@ -193,22 +193,22 @@ en:
       verified: Verified
       virus_check: Virus Check
     subject_source:
-      local_arts: "Local (Arts)"
-      local_beinecke: "Local (BRBL)"
-      local_divinity: "Local (Divinity)"
-      local_fortunoff: "Local (Fortunoff)"
-      local_medical: "Local (Medical)"
-      local_mssa: "Local (MSSA)"
-      local_music: "Local (Music)"
-      local_peabody: "Local (Peabody)"
-      local_walpole: "Local (Walpole)"
-      local_ycba_ia: "Local (YCBA-IA)"
-      local_ycba_rbm: "Local (YCBA-RBM)"
+      local_arts: Local (Arts)
+      local_beinecke: Local (BRBL)
+      local_divinity: Local (Divinity)
+      local_fortunoff: Local (Fortunoff)
+      local_medical: Local (Medical)
+      local_mssa: Local (MSSA)
+      local_music: Local (Music)
+      local_peabody: Local (Peabody)
+      local_walpole: Local (Walpole)
+      local_ycba_ia: Local (YCBA-IA)
+      local_ycba_rbm: Local (YCBA-RBM)
     container_type:
       item: Item
       item_barcode: Item Barcode
     accession_sibling_relator_type:
-      in_lot: "\"In Lot\" Relationship"
+      in_lot: \In Lot\ Relationship
     user_defined_enum_1:
       standing_order: Standing Order
       subscription: Subscription
@@ -216,19 +216,284 @@ en:
       pending_cataloging: Pending Cataloging
       pending_processing: Pending Processing
     user_defined_enum_3:
-      barton: "Barton, Melissa"
-      clemens: "Clemens, Raymond"
-      james: "James, Kathryn"
-      kuhl: "Kuhl, Nancy"
-      miles: "Miles, George"
-      repp: "Repp, Kevin"
-      young: "Young, Timothy"
+      barton: Barton, Melissa
+      clemens: Clemens, Raymond
+      james: James, Kathryn
+      kuhl: Kuhl, Nancy
+      miles: Miles, George
+      repp: Repp, Kevin
+      young: Young, Timothy
     user_defined_enum_4:
       novalue: No value defined
     restriction_type:
       UseSurrogate: 6 - Use Surrogate
       NoRequest: 7 - No Request
+    payment_fund_code:
+        A-CCOM: A-CCOM (SML)
+        ACQMK: ACQMK - Acquisition Meserve-Kundhart Fund (BRBL)
+        AFRDON: AFRDON - Gaylord Donnelley Fund (SML)
+        AFRGEN: AFRGEN - African General Fund (SML)
+        AFRINV: AFRINV - African General Fund (SML)
+        AFRSER: AFRSER - African General Fund (SML)
+        AFRSPL: AFRSPL - African Special Use Fund (SML)
+        ALTSCH: ALTSCH - Frank Altschul Fund (BRBL)
+        ALVORD: ALVORD - George B. Alvord Fund (BRBL)
+        AMERLT: AMERLT - American Literature Fund (BRBL)
+        ANDRSN: ANDRSN - Edith French Anderson memorial Fund (BRBL)
+        Anonymous: Anonymous - Anonymous Fund
+        ARTJFFE: ARTJFFE - Mr. and Mrs. William B. Jaffe FunD (SML)
+        ARTCON: ARTCON - G.A. Funds (SML)
+        ARTMON: ARTMON - G. A. fund for Art Library monographs (SML)
+        Babb: Babb - James Tinkham Babb, '24, Fund
+        BAKER: BAKER - Alfred Z. Baker, Jr. Fund (BRBL)
+        BARNDA: BARNDA - Danford N. Barney, Jr. Fund (BRBL)
+        BARNDN: BARNDN - D. Newton Barney Fund (SML)
+        BEIEND: BEIEND - E. J. and F. W. Beinecke Rare Book Endowment Fund (BRBL)
+        BEIEXP: BEIEXP - Beinecke Expendable Fund (BRBL)
+        BEIGER: BEIGER - Beinecke German Literature Collection Fund (BRBL)
+        BEILEG: BEILEG - Edwin J. Beinecke Book Fund (BRBL)
+        BEIMAI: BEIMAI - Beinecke Rare Book & Manuscript Library Maintenance Fund (BRBL)
+        BEIN1: BEIN1 - Beinecke No. 1 Fund (BRBL)
+        BEINEC: BEINEC - Edwin J. Beinecke, '07, Frederick W. Beinecke, '09S, and Walter Beinecke, '10 Fund (SML)
+        BEINFW: BEINFW - Frederick W. Beinecke Fund (BRBL)
+        BEIRES: BEIRES - Beinecke Rare Book & Capital Reserve Fund (BRBL)
+        BEISER: BEISER - Edwin J. Beinecke '07, Frederick W. Beinecke, '09S, and Walter Beinecke, '10 Fund (BRBL)
+        BEISRL: BEISRL (See SRLBEI)
+        BEQBAL: 'BEQBAL - Edwin J. Beinecke #2 (SML)'
+        BEINWA: BEINWA - Frederick W. and Carrie S. Beinecke Fund for Western Americana (BRBL)
+        BENET: 'BENET - Plate: Benet Endowment Fund (BRBL)'
+        BERNHM: BERNHM - Elinor and Leonard Bernheim Fund (BRBL)
+        BFIELD: BFIELD - Bernice Field Fund (SML)
+        BKPOOL: BKPOOL - G. A. funds (SML)
+        BLOCK: BLOCK - Ruth & Alec Block Fund (SML)
+        BOCKST: BOCKST - John Bockstoce ’66 Library Fund (BRBL)
+        BOLLIN: BOLLIN - Bollingen Fund (BRBL)
+        BROCH: BROCH - H. F. Broch de Rothermann Memorial Fund (BRBL)
+        BROOKR: BROOKR - T. Kimball Brooker Italian Renaissance Fund (BRBL)
+        BULKLY: BULKLY - Jonathan O. Bulkley Fund (BRBL)
+        CALLA: CALLA - Jack Callaway Fund (BRBL)
+        CARBEI: CARBEI - Carrie S. Beinecke Fund (BRBL)
+        CARY: CARY - Mary Flagler Cary Fund (BRBL)
+        CASE: CASE - Charles Blackwell Case Fund (BRBL)
+        CERUTTI: CERUTTI (SML)
+        CHILDA: CHILDA - Albert H. Childs Fund (BRBL)
+        CHILDS: CHILDS - Starling W. Childs Library Fund (BRBL)
+        CLAPP: CLAPP - Frederick M. Clapp Fund (SML)
+        CLASS: CLASS - Class of 1872 Fund (BRBL)
+        CL1884: CL1884 - Class of 1884, Yale College, Fund
+        CNEFEL: CNEFEL - Hadumoth Cnefelius Fund (BRBL)
+        COE-1: COE-1 - William Robertson Coe Fund No. 1 [Western Americana] (BRBL)
+        COE-2: COE-2 - William Robertson Coe American Studies Fund (BRBL)
+        COE-3: COE-3 - William Robertson Coe Fund No. 3 [Western Americana] (BRBL)
+        Cole: Cole - George Watson Cole Bibliographical Collection Fund
+        CORWIT: CORWIT - John W. Corwith Memorial Fund (BRBL)
+        Cowles: Cowles - William Hutchinson Cowles Memorial Book Fund
+        DAGGET: DAGGET - Naphtali Daggett Fund (BRBL)
+        DAVENPO: DAVENPO - John Davenport Fund (Music)
+        DESILV: DESILV - From the fund in memory of Albert DeSilver Yale 1910 (BRBL)
+        DEVDIS: DEVDIS - Collection Development Discretionary Fund (SML)
+        DEXTER: DEXTER - Fund in memory of Franklin Bowditch Dexter, Secretary, Librarian, Historian of Yale (SML)
+        DIVLATU: DIVLATU - Latourette Fund (Divinity)
+        DOOLIT: DOOLIT - Hilda Doolittle Fund (BRBL)
+        DPBHBSA: DPBHBSA - G.A. funds (SML)
+        DPBNASC: DPBNASC - G.A. funds (SML)
+        DPBNCAS: DPBNCAS - G.A. funds (SML)
+        DPBNHAR: DPBNHAR - G.A. funds (SML)
+        DRAPER: DRAPER -  William H. Draper II Fund (SML)
+        Driggs: Driggs - Henry P. Driggs Memorial Fund
+        DUPONT: DUPONT - Henry B. DuPont Fund (BRBL)
+        DURAND: DURAND - John Ewing Durand Memorial Fund (BRBL)
+        DWIGHT: DWIGHT - Elizabeth Wakeman Dwight Memorial Fund (BRBL)
+        EBERST: EBERST - Edward E. Eberstadt Fund (BRBL)
+        EGLES: EGLES - William C. Egleston Fund (BRBL)
+        ELIOTE: ELIOTE - Eliot Ellsworth Fund (SML/BRBL)
+        ENGEL: ENGEL - Henny and Rudolf Engelbarts Fund (BRBL)
+        EXCHAN: EXCHAN - Exchange Fund (BRBL)
+        FARNAM: FARNAM - Ann S. Farnam Fund (SML)
+        FELHMR: FELHMR - Jeanette Fellheimer Fund (SML)
+        FIELD: FIELD - Theron Field Fund (SML)
+        FLETCH: FLETCH - Henry Fletcher Fund (BRBL)
+        FRANK: FRANK - Hyman Frank Book Fund for the Judaica Collection (SML)
+        FRENCH: FRENCH - Edith and Richard French Fund (BRBL)
+        FROST: FROST - Frost American Literature Fund (BRBL)
+        GABRIE: GABRIE - George Gabriel Fund (BRBL)
+        GALLUP: GALLUP - Donald C. Gallup Fund (BRBL)
+        GARVER: GARVER - Milton Garver Fund (BRBL)
+        GAYLES: GAYLES - Gay and lesbian material fund (SML)
+        GOODH: GOODH - Howard L. Goodhart Memorial Fund (BRBL)
+        GENAPP: GENAPP - Law Library General Appropriations  (SML)
+        GIAMAT: GIAMAT - A. Bartlett Giamatti Fund No.2
+        GERL&L: GERL&L - G.A. funds (SML)
+        GLEASN: GLEASN (SML)
+        GOLDST: GOLDST - Herman H. Goldstein, M.D. ('23S, '27M) Fund (BRBL)
+        GRANT: GRANT (SML)
+        GREBLT: GREBLT - Martin Greenblatt Foundation Book Fund in American Literature (BRBL)
+        H.D.: H.D.  (See DOOLIT)
+        HADLEY: HADLEY - Helen Morris Hadley Fund
+        HANNA: HANNA - Archibald Hanna Fund (BRBL)
+        HARIBN: HARIBN - Cecil J. Harribine Fund (BRBL)
+        HARPER: HARPER - Lathrop Colgate Harper Fund (BRBL)
+        HEALEY: HEALEY - Horace Grant Healey Shorthand Collection Fund (SML)
+        Healy: Healy - William Arnold Healy Fund
+        HILLES: HILLES - Frederick W. Hilles Fund (BRBL)
+        HISTRY: HISTRY - G.A. funds (SML)
+        HODGDN: HODGDN - Ernest F. Hodgdon Fund (BRBL)
+        HOMES: HOMES - Henry Homes Fund (BRBL)
+        HOSKIN: HOSKIN - Arthur Corbitt Hoskins Memorial Fund (BRBL)
+        HUNT: HUNT - Rachel McMasters Miller Hunt Fund (BRBL)
+        INSERT: INSERT (SML)
+        IPLSML: IPLSML (SML)
+        JENNIN: JENNIN - Walter Jennings Memorial Fund (BRBL)
+        JACKSOJ: JACKSOJ - John Herrick Jackson Fund (SML)
+        JUDBALL: JUDBALL - Andrew D. Ball (SML)
+        JUDFRAN: JUDFRAN - Henrietta and Hyman Frank Fund (SML)
+        JUDFISH: JUDFISH - Esther A. Fishman Memorial Fund (SML)
+        JUDJUD: JUDJUD - The Samuel B. Rose Judaica Fund (SML)
+        JUDKOHU: JUDKOHU (See KOHUT)
+        JUDKUM: JUDKUM - Oscar Charles Kumble (SML)
+        JUDLITT: JUDLITT - Judaica Book Fund of the Lucius N. Littauer Foundation (SML)
+        JUDLOWE: JUDLOWE - Alexander Lowenthal Judaica Book Fund (SML)
+        JUDMEND: JUDMEND - William & Stella Mendelsohn Fund (SML)
+        JUDMON: JUDMON - G.A. funds (SML)
+        JUDNEUS: JUDNEUS (See NEUSDT)
+        JUDNEWM: JUDNEWM - Rosalyn and Joseph Newman Fund for Yiddish Literature (SML)
+        JUDRIES: JUDRIES - Joseph and Saddie Riesman Fund (SML)
+        JUDROLA: JUDROLA - The Roland Book Fund in Judaic Studies (SML)
+        JUDSIEG: JUDSIEG - Henry Jonathan Siegel Fund (SML)
+        JWJ: JWJ - James Weldon Johnson Memorial Collection of Negro Arts & Letters Fund (BRBL)
+        KENNED: KENNED - Stanton Francis Kennedy Fund (BRBL)
+        Kingsley Trust: Kingsley Trust - Kingsley Trust Association Fund
+        KITMIL: KITMIL - Kittymiller (BRBL)
+        KOHUT: KOHUT - Alexander Kohut Memorial Collection (SML)
+        KRAUS: KRAUS - H.P. Kraus Fund (BRBL)
+        KROM: KROM - Arthur D. Krom Fund (SML)
+        KROMBLK: KROMBLK - Arthur D. Krom Fund (SML)
+        KROMCON: KROMCON - Arthur D. Krom Fund (SML)
+        KROMMON: KROMMON - Arthur D. Krom Fund (SML)
+        KUMBLE: KUMBLE - Oscar Charles Kumble Fund (SML)
+        LACHOWE: LACHOWE - Jane and Walter Howe '29 Fund for Material Relating to Latin America (SML)
+        LADAMO: LADAMO - Laura K. and Valerian Lada-Mocarski Fund (BRBL)
+        Larned: Larned - Irene Battell Larned Fund
+        LATGEN: LATGEN - G.A. funds (SML)
+        LAZARE: LAZARE - Ramona Lazare Fund (BRBL)
+        LECKROM: LECKROM - G. A. American and Commonwealth monographs (SML)
+        LECSER: LECSER - American and Commonwealth serials (SML)
+        LIBASC: LIBASC - Library Associates Fund (BRBL)
+        LIBEND: LIBEND - Library Associates Endowment Fund (BRBL)
+        LIBERT: LIBERT - Herman W. Liebert Book Fund (BRBL)
+        LINSLY: LINSLY - Noah and Jared Linsly Fund (SML)
+        MACKIN: MACKIN - MacKinnon Family Fund (BRBL)
+        MALBIN: MALBIN - Lydia Winston Malbin Archives Fund (UAG)
+        MANWAR: MANWAR - Elizabeth W. Manwaring Fund (BRBL)
+        MAPCOL: MAPCOL - Map Collection Fund (SML)
+        MAPEND: MAPEND - Map Endowment Fund (SML)
+        MAPGEN: MAPGEN - G.A. funds (SML)
+        MAPHOLT: MAPHOLT - Howard M. Holtzmann Fund (SML)
+        MATTHI: MATTHI - Francis O. Matthiesen Fund (BRBL)
+        MAYPW: MAYPW - Peyton W. May Fund (SML)
+        MCCLIN: MCCLIN - Walter McClintock Memorial Fund (BRBL)
+        MCCULL: MCCULL - Hall Park McCullough Fund (BRBL)
+        MCGUIR: MCGUIR - Hubert Amer McGuire Memorial Fund (BRBL)
+        MCKIM: MCKIM - William L. McKim Fund (BRBL)
+        MEMORA: MEMORA - Memorabilia Fund (SML)
+        MENDSN: MENDSN - William & Stella Mendelsohn Fund (SML)
+        MENNER: MENNER - Robert James Menner Fund (SML)
+        MERCER: MERCER [One-time-only purchase] (BRBL)
+        MILLER: MILLER - Winlock William Miller, Jr. Memorial Fund (BRBL)
+        MISCEL: MISCEL - Miscellaneous Funds (BRBL)
+        MISGFT: MISGFT - Miscellaneous gift fund (SML)
+        MISJUD: MISJUD - Judaica gifts fund (SML)
+        MOFFAT: MOFFAT - Douglas M. Moffat Fund (BRBL)
+        MORSE: MORSE - Susan A.E. Morse and William Inglis Morse Fund for the Purchase of Canadiana (SML)
+        MURPHY: MURPHY - Lawrence S. Murphy Fund, Yale 1939 (SML)
+        NATHAN: NATHAN - Adele Gutman Nathan Theatrical Collection Fund (BRBL)
+        NETLON: NETLON - George Henry Nettleton Fund (BRBL)
+        NEUFEL: NEUFEL - Philip and Margaret Neufeld Fund of the Yale Library Associates (BRBL)
+        NEUSDT: NEUSDT - Walter Neustadt, Jr. Book Fund (SML)
+        ONEILC: ONEILC - Eugene G. O'Neill Memorial Fund (BRBL)
+        ONEILE: ONEILE - Eugene G. O'Neill Memorial Fund (BRBL)
+        OSBGFT: OSBGFT - Osborn Gift Fund (BRBL)
+        OSBHAZ: OSBHAZ - Hazel M. Osborn Fund (BRBL)
+        OSBORN: OSBORN - James Marshall and Marie-Louise Osborn Collection Fund (BRBL)
+        PENNIN: PENNIN - Penniman Memorial Library Fund
+        PENWAR: PENWAR [One-time-only for purchase of Robert Penn Warren archive] (BRBL)
+        PERRY: PERRY - Beinecke Foundation (BRBL)
+        PERRY2: PERRY2 - Widgeon Point Charitable Foundation (BRBL)
+        PHELPS: PHELPS - William Lyon Phelps Memorial Fund (SML)
+        PFORZH: PFORZH - Walter L. Pforzheimer Fund (BRBL)
+        PLAIN: PLAIN - Plain fund (SML)
+        PL480: PL480 (BRBL)
+        POUND: POUND - Ezra Pound Archive Fund (BRBL)
+        POUNGF: POUNGF - Pound Studies Center Gift Fund (BRBL)
+        PURCHCD: PURCHCD - Purchase Card (SML)
+        QUILLV: QUILLV - Violet Quill Fund (BRBL)
+        RABINO: RABINO - Louis Mayer Rabinowitz Memorial Fund (BRBL)
+        RBSPEC: RBSPEC [One-time-only purchase] (BRBL)
+        REPLACE: REPLACE - Replacements (SML)
+        REESE: REESE (See LIBASC)
+        REYNOLM: REYNOLM - Maude and Horatio Reynolds Fund (SML)
+        ROLAND: ROLAND - Roland Judaica Collection (SML)
+        ROMCLAP: ROMCLAP - Frederick M. Clapp Fund (SML)
+        ROMCON: ROMCON - G.A. funds for romance continuations (SML)
+        ROML&L: ROML&L - G.A. funds (SML)
+        ROMPOOL: ROMPOOL - G.A. funds (SML)
+        ROMSER: ROMSER - G.A. funds for romance serials (SML)
+        ROSENA: ROSENA - Arthur M. Rosenbloom Fund (BRBL)
+        ROSENC: ROSENC - Charles J. Rosenbloom Fund (BRBL)
+        SARP: SARP - South African Research Program Fund (SML)
+        SCHEUR: SCHEUR (SML)
+        SCHWAL: SCHWAL - Jacob & Ruth Schwalbe Memorial Fund (SML)
+        SHIRLY: SHIRLY - Jockey Hollow Fund (BRBL)
+        SHORTR: SHORTR (SML)
+        SLABK: SLABK - Slavic Fund (SML)
+        SLACHO: SLACHO - Chopivsky Family Book Fund (SML)
+        SLACON: SLACON - G. A. funds for Slavic continuations (SML)
+        SLAGEN: SLAGEN - G. A. general Slavic funds (SML)
+        SLAGIFT: SLAGIFT - Slavic Collection miscellaneous gift fund (SML)
+        SLAOUSP: SLAOUSP - P.D. Oupensky Memorial Collection (SML)
+        SLAEXC: SLAEXC - Slavic Exchange (SML)
+        SLAVIC: SLAVIC - Slavic General Fund (SML)
+        SLEWIS: SLEWIS - Sinclair Lewis Fund (SML)
+        SLVGEN: SLVGEN - Slavic General Fund (SML)
+        SLVINV: SLVINV (SML)
+        SMALL: SMALL - Robert W. Small Fund (BRBL)
+        SMITH: SMITH - Chandler White and Philena Pennell Smith Acquisitions Fund (BRBL)
+        SMITHP: SMITHP - Purchased from the income of the Paul L. Smith, '41 Book Fund (SML)
+        SOCSCI: SOCSCI - G. A. Social Science Fund (SML)
+        SOMMER: SOMMER - Gift of Frank H. Sommer, Class of 1944 (BRBL)
+        SOUTHW: SOUTHW - Edward Wells Southworth Fund (SML)
+        SPECK: SPECK - William A. Speck Fund (BRBL)
+        SPCIAL: SPCIAL - Special purchase account (BRBL)
+        SRLBEI: SRLBEI - Edwin J. Beinecke, '07, Frederick W. Beinecke, '09S, and Walter Beinecke, '10 Fund (SML/BRBL)
+        SRLPLA: SRLPLA (SML)
+        STEPHA: STEPHA - Ruth Stephan Fund (BRBL)
+        STREET: STREET - Thomas W. Streeter Fund (BRBL)
+        STRVAR: STRVAR - Thomas W. Streeter Texas Collection (BRBL)
+        SWAN: SWAN - The Bradford F. and Lila L. Swan Fund (BRBL)
+        TAYLHC: TAYLHC - Henry C. Taylor Fund (BRBL)
+        TAYLR: TAYLR - Robert H. Taylor Fund (BRBL)
+        TAYLW: TAYLW - William A. Taylor Memorial Fund (BRBL)
+        THEATR: THEATR - Theatre Guild Fund (BRBL)
+        TINKER: TINKER - Chauncey Brewster Tinker Prize Fund (BRBL)
+        TORENC: TORENC - Helen Hersh Torrence Fund (BRBL)
+        TUTTLE: TUTTLE - Donald S. Tuttle Book Fund (BRBL)
+        VANVEC: VANVEC - Carl Van Vechten Fund (BRBL)
+        VANSIN: VANSIN - Adrian Van Sinderen, '10 Fund
+        VIETOR: VIETOR - Alexander O. Vietor Fund (BRBL)
+        WAGNER: WAGNER - Henry R. Wagner Fund (BRBL)
+        WAGSTA: WAGSTA - David Wagstaff Memorial Fund (BRBL)
+        WAITH: WAITH - Margaret Deakers and Eugene Mersereau Waith Fund (BRBL)
+        WHITNY: WHITNY - James Lyman Whitney Fund (SML)
+        WILDER: WILDER - Thornton Wilder Memorial Fund (BRBL)
+        WINDHM: WINDHM - Donald Windham-Sandy Campbell Collection Endowment Fund (BRBL)
+        WING: WING - Donald G. Wing Fund (BRBL)
+        WGCP: WGCP - Working Group in Contemporary Poetry Fund (BRBL)
+        WOOLSEY: WOOLSEY - Woolsey Library Fund in Public Law and Diplomatic History (SML)
+        WRIGHT: WRIGHT - James Howell Wright Fund (SML)
+        XCHANG: XCHANG - Exchange Fund (SML)
+        Yale Memorabilia: Yale Memorabilia - Yale Memorabilia Fund
+
   enumeration_names:
-    user_defined_enum_1: "Order Type (accession)"
-    user_defined_enum_2: "Acquisition Capacity Budget (accession)"
-    user_defined_enum_3: "Acquired By (accession)"
+    user_defined_enum_1: Order Type (accession)
+    user_defined_enum_2: Acquisition Capacity Budget (accession)
+    user_defined_enum_3: Acquired By (accession)
