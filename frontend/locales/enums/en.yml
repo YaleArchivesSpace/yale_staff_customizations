@@ -208,7 +208,7 @@ en:
       item: Item
       item_barcode: Item Barcode
     accession_sibling_relator_type:
-      in_lot: \In Lot\ Relationship
+      in_lot: '"In Lot" Relationship'
     user_defined_enum_1:
       standing_order: Standing Order
       subscription: Subscription
