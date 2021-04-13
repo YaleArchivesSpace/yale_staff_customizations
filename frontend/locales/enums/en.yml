@@ -137,6 +137,7 @@ en:
       ready_for_review: Ready for Review
       unprocessed: Unprocessed
       deposited: Deposited
+      location_unknown: Location Unknown
     date_calendar:
       julian: Julian
     event_event_type:
