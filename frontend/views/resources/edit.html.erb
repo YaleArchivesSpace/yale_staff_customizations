@@ -1,0 +1,4 @@
+
+<%= setup_context :object => @resource, :title => "#{@resource.title} (#{@resource.id_0})" %>
+
+<%= render_aspace_partial :partial => "shared/largetree", :locals => {:root_record => @resource, :read_only => false} %>
