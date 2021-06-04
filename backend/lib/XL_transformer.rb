@@ -31,11 +31,13 @@ class XLTransformer
    @output = output ? output : ASUtils.tempfile('xform.pdf')
    @config = config
    @base = base
-#    if pdf_image.nil?
-#      @pdf_image = "file:///" + File.absolute_path(StaticAssetFinder.new(File.join('stylesheets')).find('archivesspace.small.png'))
-#    else
-#      @pdf_image = pdf_image
-#    end'
+   if !@base.start_with?('http')
+      @base = "file:///#{@base}"
+   end
+   if !@base.end_with?('/')
+    @base << '/'
+   end
+
    @xslt_path = xslt_path
    @xslt = File.read(@xslt_path)
   end
@@ -59,7 +61,8 @@ class XLTransformer
       "sans-serif-font" => "'Open_Sans'",
       "serif-font" => "'Open_Sans'",
       "backup-font" =>"'NotoSans, KurintoText'",
-      # "logo-location" => "https://raw.githubusercontent.com/YaleArchivesSpace/EAD3-to-PDF-UA/master/",
+      # "logo-location" => "'https://raw.githubusercontent.com/YaleArchivesSpace/EAD3-to-PDF-UA/master/'",
+       "logo-location" => "'#{@base}'",
       "suppressInternalComponentsInPDF" => "false()"
       }
       fo = StringIO.new(transform(params)).to_inputstream

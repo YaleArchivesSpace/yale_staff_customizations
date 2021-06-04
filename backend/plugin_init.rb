@@ -12,9 +12,7 @@ PrintToPDFRunner.class_eval do
 
     resource = Resource.get_or_die(id)
     resource_jsonmodel = Resource.to_jsonmodel(resource)
-    # Log.error("resource: #{resource_jsonmodel.pretty_inspect}")
     jsonmodel = JSONModel(:resource).new(URIResolver.resolve_references(Resource.to_jsonmodel(resource), resolve))
-    # Log.error("eadjsonmodel: #{jsonmodel.pretty_inspect}")
     opts = {
       :include_unpublished => include_unpublished,
       :include_daos => include_daos,
@@ -30,8 +28,6 @@ PrintToPDFRunner.class_eval do
   def run
     begin
       @stylesheet_path = ASUtils.find_local_directories('stylesheets', 'yale_staff_customizations')[0]
-      # Log.error("STYLESHEET PATH: #{@stylesheet_path}")
-      # Log.error('Got the right job runner!')
       RequestContext.open( :repo_id => @job.repo_id) do
         parsed = JSONModel.parse_reference(@json.job["source"])
         resource = Resource.get_or_die(parsed[:id])
@@ -47,8 +43,7 @@ PrintToPDFRunner.class_eval do
           :numbered_cs => false,
           :ead3 => true,
         }
-        # request_uri = "/repositories/#{@job.repo_id}/resource_descriptions/#{parsed[:id]}.xml"
-        # Log.error("URI: #{request_uri}\n OPTS: #{opts}")
+        
 
         if obj["repository"]["_resolved"]["image_url"]
           image_for_pdf = obj["repository"]["_resolved"]["image_url"]
@@ -68,23 +63,21 @@ PrintToPDFRunner.class_eval do
         # local method based on  ExportHelpers::generate_ead because
         # enum =  ExportHelpers.generate_ead(parsed[:id], true, true, false, true)
         # doesn't WORK?
-        enum = get_ead3(parsed[:id], true, true, false) 
+        enum = get_ead3(parsed[:id], opts[:include_unpublished], true, false) 
         enum.each {|x| xml << x}
-        Log.error("EAD3 XML: #{xml.pretty_inspect}") 
+        # Log.error("EAD3 XML: #{xml.pretty_inspect}") 
         
         # now we have the ead3 xml run the transform to the "corrected" ead
         #xslt-to-update-the-ASpace-export/yale.aspace_v2_to_yale_ead3.xsl
         
-        xslt_path = File.join(@stylesheet_path, 'xslt-to-update-the-ASpace-export','yale.aspace_v2_to_yale_ead3.xsl') 
-        # Log.error("xsl path: #{xslt_path}")
+        xslt_path = File.join(@stylesheet_path, 'xslt-to-update-the-ASpace-export','yale.aspace_v2_to_yale_ead3.xsl')
         trans = XLTransformer.new(xml, xslt_path, @stylesheet_path)
         corrected_xml = trans.transform({"suppressInternalComponents" => "false()"})
-        Log.error("CORRECTED: #{corrected_xml.pretty_inspect}")
+        # Log.error("CORRECTED: #{corrected_xml.pretty_inspect}")
 
          # now do the fop transform using ead3-to-pdf-ua.xsl
         pdftransformer = XLTransformer.new(corrected_xml,File.join(@stylesheet_path,'ead3-to-pdf-ua.xsl'), @stylesheet_path, nil, File.join(@stylesheet_path,'fop-preview.xconf'))
         pdf = pdftransformer.to_pdf
-        # Log.error("pdf? #{pdf.pretty_inspect}")
         
         # # ANW-267: For windows machines, run FOP to generate PDF externally with a system() call instead of through JRuby to fix PDF corruption issues
         # if RbConfig::CONFIG['host_os'] =~ /win32/
