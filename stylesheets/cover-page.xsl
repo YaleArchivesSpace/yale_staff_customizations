@@ -112,7 +112,7 @@
    
                 </xsl:when>
                 <xsl:otherwise>
-                    <xsl:variable name="image" select="concat($logo-location, 'config/logos/Yale_University_Shield_1.svg')"/>
+                    <xsl:variable name="image" select="concat($logo-location, 'config/logos/Yale_University_Shield.jpg')"/>
                     <fo:external-graphic src="url({$image})"
                         width="70%"
                         content-height="70%"
