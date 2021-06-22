@@ -45,7 +45,6 @@ class XLTransformer
   
   def transform(params = {})
     transformer = Saxon.XSLT(@xslt, system_id: @xslt_path )
-    Log.error("transforming with #{@xslt_path} params: #{params.pretty_inspect}")
     transformer.transform(Saxon.XML(@source), params).to_s
   end
 #   def to_fo
@@ -67,7 +66,7 @@ class XLTransformer
       }
       fo = StringIO.new(transform(params)).to_inputstream
       fopfac = FopFactory.newInstance
-      Log.error("Settin fop base to #{@base}")
+      # Log.error("Settin fop base to #{@base}")
       fopfac.setBaseURL( @base )
       fopfac.setUserConfig(@config)
       fop = fopfac.newFop(MimeConstants::MIME_PDF, @output.to_outputstream)
