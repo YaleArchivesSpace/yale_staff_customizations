@@ -166,6 +166,8 @@ en:
       decryption: Decryption
       deletion: Deletion
       digital_signature_validation: Digital Signature Validation
+      digitization_whole: Digitization Whole
+      digitization_partial: Digitization Partial
       externally_appraised: Externally Appraised
       fixity_check: Fixity Check
       frozen: Frozen
