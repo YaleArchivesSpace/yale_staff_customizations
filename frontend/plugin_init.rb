@@ -1,6 +1,6 @@
 Rails.application.config.after_initialize do
 
-  # over ride the get_ancester_title method to include the Collection ID (id_0) for a Resource
+  # over ride the get_ancestor_title method to include the Collection ID (id_0) for a Resource
   SearchHelper.module_eval do
     def get_ancestor_title(field)
         field_json = JSONModel::HTTP.get_json(field)
