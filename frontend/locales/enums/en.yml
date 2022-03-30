@@ -137,6 +137,7 @@ en:
       ready_for_review: Ready for Review
       unprocessed: Unprocessed
       deposited: Deposited
+      location_unknown: Location Unknown
     date_calendar:
       julian: Julian
     event_event_type:
@@ -347,6 +348,7 @@ en:
         IPLSML: IPLSML (SML)
         JENNIN: JENNIN - Walter Jennings Memorial Fund (BRBL)
         JACKSOJ: JACKSOJ - John Herrick Jackson Fund (SML)
+        JPNCOUN: The Council on East Asian Studies at Yale University (SML)
         JUDBALL: JUDBALL - Andrew D. Ball (SML)
         JUDFRAN: JUDFRAN - Henrietta and Hyman Frank Fund (SML)
         JUDFISH: JUDFISH - Esther A. Fishman Memorial Fund (SML)
@@ -472,6 +474,7 @@ en:
         STREET: STREET - Thomas W. Streeter Fund (BRBL)
         STRVAR: STRVAR - Thomas W. Streeter Texas Collection (BRBL)
         SWAN: SWAN - The Bradford F. and Lila L. Swan Fund (BRBL)
+        SWINGL: John Swingle Fund for Western Americana (BRBL)
         TAYLHC: TAYLHC - Henry C. Taylor Fund (BRBL)
         TAYLR: TAYLR - Robert H. Taylor Fund (BRBL)
         TAYLW: TAYLW - William A. Taylor Memorial Fund (BRBL)
