@@ -412,7 +412,7 @@ class EAD3Serializer < EADSerializer
          atts['role'] = file_version['use_statement'] if file_version['use_statement']
          atts['linktitle'] = file_version['caption'] if file_version['caption']
          atts['href'] = file_version['file_uri']
-         atts['audience'] = 'internal' unless is_digital_object_published?(digital_object, file_version)
+         atts['audience'] = file_version['publish'] ? 'external' : 'internal'
          xml.dao( atts )
        end
        xml.descriptivenote{ sanitize_mixed_content(content, xml, fragments, true) } if content
