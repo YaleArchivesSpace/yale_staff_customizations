@@ -1,7 +1,7 @@
 
 
 require 'java'
-require 'saxon-xslt'
+require 'saxon-rb'
 require 'stringio'
 
 
