@@ -3,16 +3,6 @@
 class EAD3Serializer < EADSerializer
   serializer_for :ead3
 
-  # remove when upgrading to 2.8.x (this is in core now)
-  def is_digital_object_published?(digital_object, file_version = nil)
-    if !digital_object['publish']
-      return false
-    elsif !file_version.nil? and !file_version['publish']
-      return false
-    else
-      return true
-    end
-  end
 
   # use same approach from MARC exporter
   def find_authority_id(names)
@@ -474,7 +464,7 @@ class EAD3Serializer < EADSerializer
           serialize_languages(languages, xml, fragments)
         end
 
-        EADSerializer.run_serialize_step(data, xml, fragments, :did)
+        EAD3Serializer.run_serialize_step(data, xml, fragments, :did)
 
         data.instances_with_sub_containers.each do |instance|
           serialize_container(instance, xml, @fragments)
@@ -491,7 +481,7 @@ class EAD3Serializer < EADSerializer
       serialize_bibliographies(data, xml, fragments)
       serialize_indexes(data, xml, fragments)
       serialize_controlaccess(data, xml, fragments)
-      EADSerializer.run_serialize_step(data, xml, fragments, :archdesc)
+      EAD3Serializer.run_serialize_step(data, xml, fragments, :archdesc)
 
       data.children_indexes.each do |i|
         xml.text(
@@ -580,7 +570,7 @@ class EAD3Serializer < EADSerializer
             end
 
 
-            EADSerializer.run_serialize_step(data, xml, @fragments, :did)
+            EAD3Serializer.run_serialize_step(data, xml, @fragments, :did)
 
             # Change from EAD 2002: dao must be children of did in EAD3, not archdesc
             data.digital_objects.each do |dob|
@@ -597,7 +587,7 @@ class EAD3Serializer < EADSerializer
 
           serialize_controlaccess(data, xml, @fragments)
 
-          EADSerializer.run_serialize_step(data, xml, @fragments, :archdesc)
+          EAD3Serializer.run_serialize_step(data, xml, @fragments, :archdesc)
 
           xml.dsc {
 
