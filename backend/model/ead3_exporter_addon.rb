@@ -1,5 +1,5 @@
 # encoding: utf-8
-
+require_relative 'ead'
 class EAD3Serializer < EADSerializer
   serializer_for :ead3
 
