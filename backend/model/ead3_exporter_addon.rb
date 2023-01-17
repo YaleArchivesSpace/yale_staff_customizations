@@ -3,7 +3,6 @@
 class EAD3Serializer < EADSerializer
   serializer_for :ead3
 
-
   # use same approach from MARC exporter
   def find_authority_id(names)
     value_found = nil
@@ -413,84 +412,77 @@ class EAD3Serializer < EADSerializer
   # now with altrender set to to data.URI.  see about adding to core, or at least the option to do this everywhere.
   def serialize_child(data, xml, fragments, c_depth = 1)
     begin
-    return if data["publish"] === false && !@include_unpublished
-    return if data["suppressed"] === true
+      return if data["publish"] === false && !@include_unpublished
+      return if data["suppressed"] === true
 
-    tag_name = @use_numbered_c_tags ? :"c#{c_depth.to_s.rjust(2, '0')}" : :c
+      tag_name = @use_numbered_c_tags ? :"c#{c_depth.to_s.rjust(2, '0')}" : :c
 
-    atts = {:level => data.level, :otherlevel => data.other_level, :id => prefix_id(data.ref_id), :altrender => data.uri}
+      atts = {:level => data.level, :otherlevel => data.other_level, :id => prefix_id(data.ref_id), :altrender => data.uri}
 
-    if data.publish === false
-      atts[:audience] = 'internal'
-    end
+      if data.publish === false
+        atts[:audience] = 'internal'
+      end
 
-    atts.reject! {|k, v| v.nil?}
-    xml.send(tag_name, atts) {
+      atts.reject! {|k, v| v.nil?}
+      xml.send(tag_name, atts) {
 
-      xml.did {
-        if (val = data.title)
-          xml.unittitle {  sanitize_mixed_content( val,xml, fragments) }
-        end
-
-        if AppConfig[:arks_enabled]
-          ark_url = ArkName::get_ark_url(data.id, :archival_object)
-          if ark_url
-            # <unitid><ref href=”ARK” show="new" actuate="onload">ARK</ref></unitid>
-            xml.unitid {
-              xml.ref ({"href" => ark_url,
-                        "actuate" => "onload",
-                        "show" => "new"
-                        }) { xml.text 'Archival Resource Key' }
-                        }
+        xml.did {
+          if (val = data.title)
+            xml.unittitle { sanitize_mixed_content( val, xml, fragments) }
           end
-        end
 
-        if !data.component_id.nil? && !data.component_id.empty?
-          xml.unitid data.component_id
-        end
+          handle_arks(data, xml)
 
-        if @include_unpublished
-          data.external_ids.each do |exid|
-            xml.unitid  ({ "audience" => "internal",  "type" => exid['source'], "identifier" => exid['external_id']}) { xml.text exid['external_id']}
+          #Yale override:  noope.  we add this value above, to the @altrender attribute
+          #serialize_aspace_uri(data, xml)
+
+          if !data.component_id.nil? && !data.component_id.empty?
+            xml.unitid data.component_id
           end
-        end
 
-        serialize_origination(data, xml, fragments)
-        serialize_extents(data, xml, fragments)
-        serialize_dates(data, xml, fragments)
-        serialize_did_notes(data, xml, fragments)
-
-        unless (languages = data.lang_materials).empty?
-          serialize_languages(languages, xml, fragments)
-        end
-
-        EAD3Serializer.run_serialize_step(data, xml, fragments, :did)
-
-        data.instances_with_sub_containers.each do |instance|
-          serialize_container(instance, xml, @fragments)
-        end
-
-        if @include_daos
-          data.instances_with_digital_objects.each do |instance|
-            serialize_digital_object(instance['digital_object']['_resolved'], xml, fragments)
+          if @include_unpublished
+            data.external_ids.each do |exid|
+              xml.unitid ({ "audience" => "internal", "type" => exid['source'], "identifier" => exid['external_id']}) { xml.text exid['external_id']}
+            end
           end
+
+          serialize_origination(data, xml, fragments)
+          serialize_extents(data, xml, fragments)
+          serialize_dates(data, xml, fragments)
+          serialize_did_notes(data, xml, fragments)
+
+          unless (languages = data.lang_materials).empty?
+            serialize_languages(languages, xml, fragments)
+          end
+
+          EAD3Serializer.run_serialize_step(data, xml, fragments, :did)
+
+          data.instances_with_sub_containers.each do |instance|
+            serialize_container(instance, xml, @fragments)
+          end
+
+          if @include_daos
+            data.instances_with_digital_objects.each do |instance|
+              digital_object = instance['digital_object']['_resolved']
+              serialize_digital_object(digital_object, xml, fragments)
+            end
+          end
+        }
+
+        serialize_nondid_notes(data, xml, fragments)
+        serialize_bibliographies(data, xml, fragments)
+        serialize_indexes(data, xml, fragments)
+        serialize_controlaccess(data, xml, fragments)
+        EAD3Serializer.run_serialize_step(data, xml, fragments, :archdesc)
+
+        data.children_indexes.each do |i|
+          xml.text(
+                   @stream_handler.buffer {|xml, new_fragments|
+                     serialize_child(data.get_child(i), xml, new_fragments, c_depth + 1)
+                   }
+                   )
         end
       }
-
-      serialize_nondid_notes(data, xml, fragments)
-      serialize_bibliographies(data, xml, fragments)
-      serialize_indexes(data, xml, fragments)
-      serialize_controlaccess(data, xml, fragments)
-      EAD3Serializer.run_serialize_step(data, xml, fragments, :archdesc)
-
-      data.children_indexes.each do |i|
-        xml.text(
-                 @stream_handler.buffer {|xml, new_fragments|
-                   serialize_child(data.get_child(i), xml, new_fragments, c_depth + 1)
-                 }
-                 )
-      end
-    }
     rescue => e
       xml.text "ASPACE EXPORT ERROR : YOU HAVE A PROBLEM WITH YOUR EXPORT OF ARCHIVAL OBJECTS. THE FOLLOWING INFORMATION MAY HELP:\n
                 MESSAGE: #{e.message.inspect}  \n
@@ -498,7 +490,7 @@ class EAD3Serializer < EADSerializer
     end
   end
 
-  # updated... see URI on archdesc altrender
+  # updated... see URI on archdesc altrender... and removal of extra unitid element, via the serialize_aspace_uri method
   def stream(data)
     @stream_handler = ASpaceExport::StreamHandler.new
     @fragments = ASpaceExport::RawXMLHandler.new
@@ -537,8 +529,9 @@ class EAD3Serializer < EADSerializer
               xml.unitid (0..3).map { |i| data.send("id_#{i}") }.compact.join('.')
 
               handle_arks(data, xml)
-
-              serialize_aspace_uri(data, xml)
+              
+              #Yale override:  noope.  we add this value above, to the @altrender attribute
+              #serialize_aspace_uri(data, xml)
 
               unless data.repo.nil? || data.repo.name.nil?
                 xml.repository {
