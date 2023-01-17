@@ -1,5 +1,5 @@
 # encoding: utf-8
-require_relative 'ead'
+
 class EAD3Serializer < EADSerializer
   serializer_for :ead3
 
@@ -410,7 +410,7 @@ class EAD3Serializer < EADSerializer
    end
   end
 
-  # updated, but now with altrender set to to data.URI
+  # now with altrender set to to data.URI.  see about adding to core, or at least the option to do this everywhere.
   def serialize_child(data, xml, fragments, c_depth = 1)
     begin
     return if data["publish"] === false && !@include_unpublished
@@ -509,100 +509,102 @@ class EAD3Serializer < EADSerializer
 
     builder = Nokogiri::XML::Builder.new(:encoding => "UTF-8") do |xml|
       begin
+        ead_attributes = {}
 
-      ead_attributes = {}
+        if data.publish === false
+          ead_attributes['audience'] = 'internal'
+        end
 
-      if data.publish === false
-        ead_attributes['audience'] = 'internal'
-      end
+        xml.ead( ead_attributes ) {
 
-      xml.ead( ead_attributes ) {
+          xml.text (
+            @stream_handler.buffer { |xml, new_fragments|
+              serialize_control(data, xml, new_fragments)
+            }
+          )
 
-        xml.text (
-          @stream_handler.buffer { |xml, new_fragments|
-            serialize_control(data, xml, new_fragments)
-          }
-        )
+          atts = {:level => data.level, :otherlevel => data.other_level, :altrender => data.uri}
+          atts.reject! {|k, v| v.nil?}
 
-        atts = {:level => data.level, :otherlevel => data.other_level, :altrender => data.uri}
-        atts.reject! {|k, v| v.nil?}
+          xml.archdesc(atts) {
 
-        xml.archdesc(atts) {
+            xml.did {
 
-          xml.did {
+              unless data.title.nil?
+                xml.unittitle { sanitize_mixed_content(data.title, xml, @fragments) }
+              end
 
-            unless data.title.nil?
-              xml.unittitle { sanitize_mixed_content(data.title, xml, @fragments) }
-            end
+              xml.unitid (0..3).map { |i| data.send("id_#{i}") }.compact.join('.')
 
-            xml.unitid (0..3).map{ |i| data.send("id_#{i}") }.compact.join('.')
+              handle_arks(data, xml)
 
-            unless data.repo.nil? || data.repo.name.nil?
-              xml.repository {
-                xml.corpname {
-                  xml.part {
-                    sanitize_mixed_content(data.repo.name, xml, @fragments)
+              serialize_aspace_uri(data, xml)
+
+              unless data.repo.nil? || data.repo.name.nil?
+                xml.repository {
+                  xml.corpname {
+                    xml.part {
+                      sanitize_mixed_content(data.repo.name, xml, @fragments)
+                    }
                   }
                 }
-              }
-            end
-
-            unless (languages = data.lang_materials).empty?
-              serialize_languages(languages, xml, @fragments)
-            end
-
-            data.instances_with_sub_containers.each do |instance|
-              serialize_container(instance, xml, @fragments)
-            end
-
-            serialize_extents(data, xml, @fragments)
-
-            serialize_dates(data, xml, @fragments)
-
-            serialize_did_notes(data, xml, @fragments)
-
-            serialize_origination(data, xml, @fragments)
-
-            if @include_unpublished
-              data.external_ids.each do |exid|
-                xml.unitid  ({ "audience" => "internal", "type" => exid['source'], "identifier" => exid['external_id']}) { xml.text exid['external_id']}
               end
-            end
 
+              unless (languages = data.lang_materials).empty?
+                serialize_languages(languages, xml, @fragments)
+              end
 
-            EAD3Serializer.run_serialize_step(data, xml, @fragments, :did)
+              data.instances_with_sub_containers.each do |instance|
+                serialize_container(instance, xml, @fragments)
+              end
 
-            # Change from EAD 2002: dao must be children of did in EAD3, not archdesc
-            data.digital_objects.each do |dob|
-              serialize_digital_object(dob, xml, @fragments)
-            end
+              serialize_extents(data, xml, @fragments)
 
-          }# </did>
+              serialize_dates(data, xml, @fragments)
 
-          serialize_nondid_notes(data, xml, @fragments)
+              serialize_did_notes(data, xml, @fragments)
 
-          serialize_bibliographies(data, xml, @fragments)
+              serialize_origination(data, xml, @fragments)
 
-          serialize_indexes(data, xml, @fragments)
+              if @include_unpublished
+                data.external_ids.each do |exid|
+                  xml.unitid ({ "audience" => "internal", "type" => exid['source'], "identifier" => exid['external_id']}) { xml.text exid['external_id']}
+                end
+              end
 
-          serialize_controlaccess(data, xml, @fragments)
+              EAD3Serializer.run_serialize_step(data, xml, @fragments, :did)
 
-          EAD3Serializer.run_serialize_step(data, xml, @fragments, :archdesc)
+              # Change from EAD 2002: dao must be children of did in EAD3, not archdesc
+              data.digital_objects.each do |dob|
+                serialize_digital_object(dob, xml, @fragments)
+              end
 
-          xml.dsc {
+            }# </did>
 
-            data.children_indexes.each do |i|
-              xml.text( @stream_handler.buffer {
-                |xml, new_fragments| serialize_child(data.get_child(i), xml, new_fragments)
-                }
-              )
-            end
+            serialize_nondid_notes(data, xml, @fragments)
+
+            serialize_bibliographies(data, xml, @fragments)
+
+            serialize_indexes(data, xml, @fragments)
+
+            serialize_controlaccess(data, xml, @fragments)
+
+            EAD3Serializer.run_serialize_step(data, xml, @fragments, :archdesc)
+
+            xml.dsc {
+
+              data.children_indexes.each do |i|
+                xml.text( @stream_handler.buffer {
+                  |xml, new_fragments| serialize_child(data.get_child(i), xml, new_fragments)
+                  }
+                )
+              end
+            }
           }
         }
-      }
 
       rescue => e
-        xml.text  "ASPACE EXPORT ERROR : YOU HAVE A PROBLEM WITH YOUR EXPORT OF YOUR RESOURCE. THE FOLLOWING INFORMATION MAY HELP:\n
+        xml.text "ASPACE EXPORT ERROR : YOU HAVE A PROBLEM WITH YOUR EXPORT OF YOUR RESOURCE. THE FOLLOWING INFORMATION MAY HELP:\n
                   MESSAGE: #{e.message.inspect}  \n
                   TRACE: #{e.backtrace.inspect} \n "
       end
@@ -622,7 +624,7 @@ class EAD3Serializer < EADSerializer
     end
   end # END stream
 
-  # updates.... see user_defined.string_2
+  # and one minor update for the control section.... see user_defined.string_2
   def serialize_control(data, xml, fragments)
     control_atts = {
       repositoryencoding: "iso15511",
@@ -631,13 +633,14 @@ class EAD3Serializer < EADSerializer
       relatedencoding: "marc",
       langencoding: "iso639-2b",
       scriptencoding: "iso15924"
-    }.reject{|k,v| v.nil? || v.empty? || v == "null"}
+    }.reject {|k, v| v.nil? || v.empty? || v == "null"}
 
     xml.control(control_atts) {
+      ins_url = data.ead_location
 
-      ark_url = AppConfig[:arks_enabled] ? ArkName::get_ark_url(data.id, :resource) : nil
-
-      ins_url = ark_url.nil? ? data.ead_location : ark_url
+      if AppConfig[:arks_enabled] && data.ark_name && (current_ark = data.ark_name.fetch('current', nil))
+        ins_url = current_ark
+      end
 
       recordid_atts = {
         instanceurl: ins_url
@@ -661,7 +664,7 @@ class EAD3Serializer < EADSerializer
           titleproper = ""
           titleproper += "#{data.finding_aid_title} " if data.finding_aid_title
           titleproper += "#{data.title}" if ( data.title && titleproper.empty? )
-          xml.titleproper {  strip_tags_and_sanitize(titleproper, xml, fragments) }
+          xml.titleproper { strip_tags_and_sanitize(titleproper, xml, fragments) }
 
           # titleproper (filing)
           unless data.finding_aid_filing_title.nil?
@@ -708,7 +711,12 @@ class EAD3Serializer < EADSerializer
             xml.address {
 
               repo_addresslines.each do |key, line|
-                if ['telephone', 'email'].include?(key)
+                if key.start_with?('telephone')
+                  addressline_atts = { localtype: line[0] }
+                  xml.addressline(addressline_atts) {
+                    sanitize_mixed_content(line[1], xml, fragments)
+                  }
+                elsif key == 'email'
                   addressline_atts = { localtype: key }
                   xml.addressline(addressline_atts) {
                     sanitize_mixed_content(line, xml, fragments)
@@ -748,6 +756,10 @@ class EAD3Serializer < EADSerializer
               })
             }
           end
+
+          data.metadata_rights_declaration_in_publicationstmt do |mrd|
+            xml.p (mrd["descriptive_note"])
+          end
         }
 
         if (data.finding_aid_series_statement)
@@ -769,7 +781,7 @@ class EAD3Serializer < EADSerializer
 
       maintenanceagency_atts = {
         countrycode: data.repo.country
-      }.delete_if { |k,v| v.nil? || v.empty? }
+      }.delete_if { |k, v| v.nil? || v.empty? }
 
       xml.maintenanceagency(maintenanceagency_atts) {
 
@@ -814,6 +826,30 @@ class EAD3Serializer < EADSerializer
           xml.citation {
             xml.text(I18n.t("enumerations.resource_finding_aid_description_rules.#{ data.finding_aid_description_rules}"))
           }
+        }
+      end
+
+      data.metadata_rights_declaration_in_rightsdeclaration do |mrd|
+        xml.rightsdeclaration {
+          attributes = { href: mrd["file_uri"] }
+          attributes[:arcrole] = mrd["xlink_arcrole_attribute"] if mrd["xlink_arcrole_attribute"]
+          attributes[:linkrole] = mrd["xlink_role_attribute"] if mrd["xlink_role_attribute"]
+          xml.citation (attributes) {
+            if mrd["license"]
+              xml.text (I18n.t("enumerations.metadata_license.#{mrd['license']}", :default => mrd['license']))
+            end
+          }
+          if mrd["license"]
+            xml.abbr (mrd["license"])
+          end
+          if mrd["descriptive_note"]
+            xml.descriptivenote {
+
+              if mrd["descriptive_note"]
+                xml.p (mrd["descriptive_note"])
+              end
+            }
+          end
         }
       end
 
