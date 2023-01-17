@@ -433,7 +433,7 @@ class EAD3Serializer < EADSerializer
 
           handle_arks(data, xml)
 
-          #Yale override:  noope.  we add this value above, to the @altrender attribute
+          #Yale override: NOPE. we add this value above, to the @altrender attribute
           #serialize_aspace_uri(data, xml)
 
           if !data.component_id.nil? && !data.component_id.empty?
@@ -530,7 +530,7 @@ class EAD3Serializer < EADSerializer
 
               handle_arks(data, xml)
               
-              #Yale override:  noope.  we add this value above, to the @altrender attribute
+              #Yale override: NOPE. we add this value above, to the @altrender attribute
               #serialize_aspace_uri(data, xml)
 
               unless data.repo.nil? || data.repo.name.nil?
