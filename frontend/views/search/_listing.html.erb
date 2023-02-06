@@ -1,8 +1,8 @@
 <% if @search_data.results? %>
 
-  <% add_thumbnail_column if digital_objects_in_search_results? %>
-  
   <% add_columns %>
+
+  <% add_thumbnail_column if digital_objects_in_search_results? %>
 
   <%= render_aspace_partial :partial => "shared/pagination_summary" %>
 
