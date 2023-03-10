@@ -41,6 +41,9 @@ Sequel.migration do
                 :user_mtime => now,
                 :lock_version => 0,
               )
+
+              self[:name_authority_id].filter(:id => authority_id.fetch(:id)).delete
+              self[name_table].filter(:id => name_to_promote.fetch(:id)).update(:source_id => nil)
             end
 
             # Reindex the agent
