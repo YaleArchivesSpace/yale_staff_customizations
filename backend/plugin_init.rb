@@ -144,28 +144,28 @@ MarcXMLAuthAgentBaseMap.module_eval do
       "parent::record/datafield[@tag='016']" => agent_record_identifiers_base_map("parent::record/datafield[@tag='016']/subfield[@code='a']"),
       "parent::record/datafield[@tag='024']" => agent_record_identifiers_base_map("parent::record/datafield[@tag='024']/subfield[@code='a' or @code='0' or @code='1'][1]"),
       "parent::record/datafield[@tag='035']" => agent_record_identifiers_base_map("parent::record/datafield[@tag='035']/subfield[@code='a']"),
-      "parent::record/datafield[@tag='040']/subfield[@code='e']" => convention_declaration_map,
+      #{}"parent::record/datafield[@tag='040']/subfield[@code='e']" => convention_declaration_map,
       "parent::record/datafield[@tag='046']" => dates_map,
     # lots of stuff removed here, until we can figure out how to handle IDs, etc. (also, once we have these IDs, can't we just merge this extra subject data at the time of export / display?)
       "parent::record/datafield[@tag='377']" => used_language_map,
 
-      "parent::record/datafield[@tag='670']" => agent_sources_map,
+      #{}"parent::record/datafield[@tag='670']" => agent_sources_map,
       "parent::record/datafield[@tag='678']" => bioghist_note_map,
-      "parent::record/datafield[@tag='040']/subfield[@code='d']" => {
-        :obj => :agent_other_agency_codes,
-        :rel => :agent_other_agency_codes,
-        :map => {
-          "self::subfield" => proc { |aoac, node|
-            aoac['maintenance_agency'] = node.inner_text
-          }
-        }
-      },
-      "parent::record" => proc { |record, node|
-        # apply the more complicated inter-leaf logic
-        record['agent_other_agency_codes'].reject! { |subrecord|
-          subrecord['maintenance_agency'] == record['agent_record_controls'][0]['maintenance_agency']
-        }
-      }
+      # "parent::record/datafield[@tag='040']/subfield[@code='d']" => {
+      #   :obj => :agent_other_agency_codes,
+      #   :rel => :agent_other_agency_codes,
+      #   :map => {
+      #     "self::subfield" => proc { |aoac, node|
+      #       aoac['maintenance_agency'] = node.inner_text
+      #     }
+      #   }
+      # },
+      # "parent::record" => proc { |record, node|
+      #   # apply the more complicated inter-leaf logic
+      #   record['agent_other_agency_codes'].reject! { |subrecord|
+      #     subrecord['maintenance_agency'] == record['agent_record_controls'][0]['maintenance_agency']
+      #   }
+      # }
     }
 
     if import_events
